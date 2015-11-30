@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Исторический тест</title>
+</head>
+<body>
+    <script>
+        var num_of_right = 0;
+        var ww2 = {
+            q: 'В каком году началась вторая мировая война?',
+            name: "Вторая Мировая Война",
+            year: 1939,
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur dignissimos ea," +
+            " expedita in ipsa laboriosam, libero provident qui quia quibusdam reiciendis, sunt tempore temporibus voluptate?" +
+            " Illum inventore officiis placeat!",
+            image: '<img src = "images/2.jpg">',
+            //link: ,
+        };
+//        document.write('<h2>'+ww2.name+'</h2>');
+//        document.write('<p>'+ww2.description+'</p>');
+//        //document.write("<img src="img/1.jpg">");
+        var prav = 'Правильно', neprav = 'Неправильно';
+//        var q1 = window.prompt('В каком году началась вторая мировая война?');
+//        if (q1 == 1939) {
+//            alert(prav);
+//            var num_of_right = num_of_right + 1;
+//        }
+//        else {alert(neprav);}
+
+        var spb = {
+            q: 'В каком году был основан Санкт-Петербург?',
+            name: 'Основание города Санкт-Петербурга',
+            year: 1703,
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur dignissimos ea," +
+            " expedita in ipsa laboriosam, libero provident qui quia quibusdam reiciendis, sunt tempore temporibus voluptate?" +
+            " Illum inventore officiis placeat!",
+            image: '<img src = "images/1.jpg">',
+          //  link: ww2,
+        };
+//        document.write('<h2>'+spb.name+'</h2>');
+//        document.write('<p>'+spb.description+'</p>');
+//        //document.write("<img src="img/2.jpg">");
+//
+//        var q1 = window.prompt('В каком году был основан Санкт-Петербург?');
+//        if (q1 == 1703) {
+//            alert(prav);
+//            var num_of_right = num_of_right + 1;
+//        }
+//        else {alert(neprav);}
+//
+//        alert('Правильных ответов '+ num_of_right + ' из 10')
+//
+        var result = [];
+        result.push(ww2);
+        result.push(spb);
+
+        for (var i in result){
+            document.write('<h2>'+result[i].name+'</h2>');
+            document.write('<p>'+result[i].description+'</p>');
+            document.write(result[i].image);
+
+            var asw = window.prompt(result[i].q);
+            if (asw == result[i].year) {
+            alert(prav);
+            var num_of_right = num_of_right + 1;
+            }     else {alert(neprav);}
+
+        }
+    </script>
+</body>
+</html>

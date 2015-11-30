@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // почему-то неправильно работает. что-то ему не нравится x.length, если его закомментировать, все работает.
+    var x = parseInt(window.prompt("Введите любое число"));
+    if ((x % 2 == 0) && (x.length == 2)) {
+        alert ("Данное целое число является четным двузначным числом");
+    }
+    else {
+        alert("Данное целое число НЕ является четным двузначным числом");
+    }
+
+</script>
+
+</body>
+</html>
