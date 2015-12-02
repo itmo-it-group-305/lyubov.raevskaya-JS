@@ -1,0 +1,16 @@
+.container {
+    height: 1000px;
+    width: 500px;
+    background-color: orange;
+    margin-left: 400px;
+}
+.menu-container {
+    list-style: none;
+    border: 1px solid gray;
+    height: auto;
+
+}
+textarea {
+    margin-left: 30px;
+    margin-top: 40px;
+}
