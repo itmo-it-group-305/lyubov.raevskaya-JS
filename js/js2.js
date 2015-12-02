@@ -16,5 +16,9 @@ child.style.marginRight = "40px";
 child.style.marginTop = "40px";*/
 
 menu.appendChild(child);
+var submit = document.getElementsByTagName("input");
+var text = document.getElementById("text");
+if (submit = true) {
+child.innerHTML="<form></form>";} //вот тут надо как-то вставить текст
 //child.appendChild("input");
 menu.insertBefore(child);
