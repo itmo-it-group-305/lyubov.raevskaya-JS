@@ -7,10 +7,16 @@
 .menu-container {
     list-style: none;
     border: 1px solid gray;
-    height: auto;
+    height: 100px;
+    margin-top: 70px;
+    margin-right: 25px;
 
 }
 textarea {
     margin-left: 30px;
     margin-top: 40px;
+}
+input {
+    float: right;
+    margin: 25px;
 }

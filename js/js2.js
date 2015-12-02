@@ -17,3 +17,4 @@ child.style.marginTop = "40px";*/
 
 menu.appendChild(child);
 //child.appendChild("input");
+menu.insertBefore(child);
