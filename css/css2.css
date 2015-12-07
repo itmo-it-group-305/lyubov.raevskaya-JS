@@ -1,0 +1,27 @@
+#container {
+    background-color: gray;
+    height: 300px;
+    text-align: center;
+
+}
+#red {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    display: table-cell;
+
+}
+#green {
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    display: table-cell;
+
+}
+#yellow {
+    height: 100px;
+    width: 100px;
+    background-color: yellow;
+    display: table-cell;
+
+}
