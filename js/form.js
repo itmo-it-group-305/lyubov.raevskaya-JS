@@ -3,17 +3,19 @@
  */
 var form = {
     tag: 'form',
-    jjj:4444,
         child: [{tag: 'button', text: 'x'},
-            {tag: 'label', text: 'имя'},
-            {tag: 'input', type: 'text', id: 'name'}
-
+            {tag: 'label', text: 'Имя'},
+            {tag: 'input', type: 'text', id: 'name'},
+            {tag: 'label', text: 'Телефон'},
+            {tag: 'input', type: 'text', id: 'telephone'},
+            {tag: 'label', text: 'e-mail'},
+            {tag: 'input', type: 'text', id: 'email'},
+            {tag: 'button', text: 'Отправить', id: 'send'}
         ]
-}
+};
 function builderHtml(obj) {
     for (i in obj) {
         if (i=='tag') {
-
             elm = document.createElement(obj[i]);
         }
         if (i=='text') {
@@ -38,8 +40,9 @@ function buildForm (obj) {
 
             for (j in obj.child) {
                 console.log('child');
+                var br = document.createElement('br');
                 parent.appendChild(builderHtml(obj.child[j]));
-
+                parent.appendChild(br);
             }
         }
 
@@ -49,3 +52,54 @@ function buildForm (obj) {
 }
 parent = document.getElementById('form');
 parent.appendChild(buildForm(form));
+
+//напишем функцию, которая будет проверять, что все поля заполнены
+
+function checkEmptyField (field) {
+    //if(field.value) return true;
+    //или:
+    return Boolean(field.value);
+}
+//получение полей формы
+//document.getElementById('send').onclick =
+    function getFieldForm(){
+    var field = ['name', 'telephone', 'email'];
+    for (i in field) {
+
+        var obj = document.getElementById(field[i]);
+
+        if (checkEmptyField(obj)) {
+            // 1. снять красную рамку
+            obj.style.borderColor = "green";
+            obj.style.backgroundColor = "none";
+
+        }
+        else {
+            //установить красную рамку
+            obj.style.borderColor = "red";
+            obj.style.backgroundColor = "rgba(255, 0, 0, 0.1)";
+            continue; //если поле пустое, нет смысла выполнять код дальше
+        }
+        if (field[i] == 'telephone') {
+            console.log(checkPhone(obj));
+            if (checkPhone(obj.value)) {
+
+                obj.style.borderColor = "green";
+                obj.style.backgroundColor = "none";
+            }
+            else {
+
+                obj.style.borderColor = "red";
+                obj.style.backgroundColor = "rgba(255, 0, 0, 0.1)";
+            }
+
+        }
+    }
+    return false;
+};
+function checkPhone (str) {
+
+    ptr = /\b7\(\d{3}\)\d{3}-\d{2}-\d{2}\b/;
+    return ptr.test(str);
+
+}
