@@ -3,7 +3,7 @@
  */
 var form = {
     tag: 'form',
-        child: [{tag: 'button', text: 'x'},
+        child: [{tag: 'button', text: 'x', id: 'close'},
             {tag: 'label', text: 'Имя'},
             {tag: 'input', type: 'text', id: 'name'},
             {tag: 'label', text: 'Телефон'},
@@ -61,7 +61,7 @@ function checkEmptyField (field) {
     return Boolean(field.value);
 }
 //получение полей формы
-//document.getElementById('send').onclick =
+document.getElementById('send').onclick =
     function getFieldForm(){
     var field = ['name', 'telephone', 'email'];
     for (i in field) {
@@ -94,12 +94,34 @@ function checkEmptyField (field) {
             }
 
         }
+         if (field[i] == 'email') {
+            console.log(checkEmail(obj));
+            if (checkEmail(obj.value)) {
+
+                obj.style.borderColor = "green";
+                obj.style.backgroundColor = "none";
+            }
+            else {
+
+                obj.style.borderColor = "red";
+                obj.style.backgroundColor = "rgba(255, 0, 0, 0.1)";
+            }
+
+        }
     }
     return false;
 };
 function checkPhone (str) {
-
     ptr = /\b7\(\d{3}\)\d{3}-\d{2}-\d{2}\b/;
     return ptr.test(str);
-
+}
+function checkEmail (str) {
+    ptr = /\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}/;
+    return ptr.test(str);
+}
+document.getElementById('close').onclick =
+    function closeForm() {
+var forma = document.getElementById('form');
+    forma.style.display = "none";
+    return false;
 }
