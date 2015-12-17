@@ -1,0 +1,118 @@
+@import "grid.css";
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=cyrillic,latin);
+@import url(https://fonts.googleapis.com/css?family=Prosto+One&subset=cyrillic,latin);
+
+
+.container {
+    margin: 0 auto;
+}
+
+body {
+    color: black;
+    background: #E4E4E4;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+header {
+    background-color: white;
+    height: 60px;
+    margin: 0;
+}
+
+.logo{
+    height: 100%;
+    float: left;
+}
+.logo img{
+    color: black;
+    width: 90%;
+    margin: 5px;
+    line-height: 60px;
+}
+.menu {
+    list-style: none;
+    display: table;
+    background: white;
+    height: 20px;
+    text-align: center;
+    padding-left: 0;
+    margin-top: 15px;
+
+}
+.menu li {
+    float: left;
+    display: table-cell;
+    height: 20px;
+    position: relative;
+    vertical-align: middle;
+width: 16.5%;
+}
+.menu li::after {
+    content: '/';
+    font-size: 0.6em;
+    padding-top: 7px;
+    float: right;
+}
+.menu li:last-child:after{
+content: '';
+}
+
+.menu a {
+    text-decoration: none;
+    font-family: 'Prosto One', cursive;
+font-weight: bold;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    font-size: 0.6em;
+    letter-spacing: 1px;
+}
+
+.menu a:hover {
+    color: #c3c3c3;
+}
+
+.icons{
+float: right;
+    height: 100%;
+}
+.icons a{
+    color: black;
+    margin: 5px;
+    line-height: 60px;
+}
+.text {
+    background-color: white;
+    margin-top: 5px;
+}
+.text h1 {
+    font-size: 1.9em;
+}
+
+.text h6 {
+    font-style: italic;
+    border-bottom: 1px dotted #d4d4d4;
+    padding-bottom: 20px;
+    margin: 0;
+}
+.text img{
+    width: 70%;
+ }
+.center {
+    text-align: center;
+}
+
+.sidebar {
+    background-color: white;
+    margin-top: 5px;
+    margin-left: 40px;
+    font-size: 0.8em;
+}
+.sidebar img{
+    width: 100%;
+}
+.sidebar a {
+    color: #47b3ff;
+}
+
