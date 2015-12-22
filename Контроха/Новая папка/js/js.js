@@ -5,7 +5,7 @@ var data = { "title": "Goods",
     "goods": [
             {
                 "name": "Name 1",
-                "image": "image 1",
+                "image": "/img/image 1",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolorum, facilis, id in laborum magni nihil officia perspiciatis porro praesentium quas quo sit suscipit. Nostrum porro quia quo quod voluptatem! Lorem ipsum dolor sit amet, consectetur adipisicing elit."
             },
              
