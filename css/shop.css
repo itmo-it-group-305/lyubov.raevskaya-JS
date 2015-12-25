@@ -1,27 +1,42 @@
 body {
     font-family: Tahoma;
+    background-image: url(../images/tileable_wood_texture.png);
+
 }
 #basket {
-    background-color: #ffcccc;
-    text-align: center;
+    background-color: rgba(255,237,129, 0.5);
+
     border-bottom: 3px dotted #ff9999;
-    margin: 0;
+
     padding: 10px;
+}
+/*#basket h2 {*/
+    /*text-align: left;*/
+    /*margin: 0;*/
+/*}*/
+.tab {
+    margin-left: 400px;
+    display: none;
+}
+.tab th, td {
+    width: 150px;
+    text-align: center;
 }
 .tovar {
     width: 900px;
     height: 210px;
     background-color: #e3e3e3;
-    border: 1px solid #9c9c9c;
+    border-bottom: 1px dotted #9c9c9c;
     margin-left: 200px;
     padding: 10px;
-    }
+}
 
 .images {
     width: 180px;
     height: 180px;
     float: left;
     margin: 10px;
+    border-radius: 5px;
 }
 .description {
 margin: 10px;
@@ -34,7 +49,7 @@ margin: 10px;
     float: right;
     font-size: 2em;
 }
-.button {
+.add {
     float: right;
     background-color: #ff9dc3;
     height: 30px;
@@ -45,4 +60,23 @@ font-weight: bold;
 }
 .num {
     width: 50px;
+}
+.sum {
+    font-size: 1.25em;
+    color: #ff511d;
+    font-weight: bold;
+
+}
+.icon {
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+    float: left;
+    display: block;
+    margin: 0 10px;
+}
+#basket h2 {
+
+    margin: 8px;
+
 }
