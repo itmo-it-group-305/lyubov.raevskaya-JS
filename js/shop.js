@@ -53,6 +53,7 @@ jQuery(document).ready(function() {
         //jQuery('.add').on('click', function() {alert('dcdsc');});
         jQuery('body').on('click', '.del', this.delGoods);
         //jQuery('#ff').on('click', function() {alert('dcdsc');});
+        jQuery('.val').on('click', '.del', this.changeAmount);
     };
 
     this.addGoods = function (e) {
@@ -67,9 +68,13 @@ jQuery(document).ready(function() {
         //var tab = "<table class='tab'>" + "<tr>" + "<th>Наименование</th>" + "<th>Количество</th>" + "<th>Стоимость</th>" + "<th></th>" + "</tr>" + "</table>";
         //jQuery('#basket').append(jQuery(tab));
         //console.log(t.price);
-        var str = "<tr id='line'>" + "<td>" + name + "</td>"  + "<td>" + "<input class='num' type='text'>" + "</td>"  + "<td>" + price + "</td>" + "<td>" + "<button class='del'>x</button>" + "<td>" + "</tr>";
+        var str = "<tr id='line'>" + "<td>" + name + "</td>"  + "<td>" + "<input class='num' type='text'>" + "</td>"  + "<td id = 'val'>" + price + "</td>" + "<td>" + "<button class='del'>x</button>" + "</td>" + "</tr>";
         jQuery('.tab').show().append(jQuery(str));
+        //var count = jQuery('.num');
+        //if (count) {price = price*count;
+        //    t.reculcPrice(+price)};
         t.reculcPrice(+price);
+
         //this.addRecord();
         //console.log (this);
     };
@@ -77,21 +82,30 @@ jQuery(document).ready(function() {
         //var elm = jQuery(e.toElement);
         jQuery(this).parent().parent('tr').remove();
         e.preventDefault();
-        var price = jQuery(this).attr('price');
+        var price = parseInt(jQuery(this).parent().prev());
 
-        t.reculcPrice(t.price-price);
+        t.reculcPrice(-price);
+        //t.itog = t.itog - price;
+        console.log(price);
     };
     this.reculcPrice = function (value) {
-        t.price = t.price + value;
 
-        var itog = "<span class='sum'>" + "  " + "Сумма покупок:" + "  " + "p" + price + "</span>";
+        t.price = t.price + value;
+        var itog = "<span class='sum'>" + "  " + "Сумма покупок:  "  + t.price + "  " + "p" + "</span>" + '<button class="post">' + 'Оформить заказ' + '</button>';
 
         jQuery('#itog').html(itog);
+        jQuery('.post').show().append(jQuery());
+
+
     };
     //console.log (this);
 
-    this.changeAmount = function () {
+    this.changeAmount = function (e) {
+    var amount = parseInt(jQuery(e).attr('input'));
+        var val = parseInt(jQuery(this).next());
 
+        console.log (val);
+        jQuery('basket').html(data);
     };
     //this.discount = function () {
     //
