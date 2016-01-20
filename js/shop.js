@@ -39,8 +39,7 @@ jQuery(document).ready(function() {
         "but": "Добавить в корзину"
     };
     var html = Mustache.render(template, data);
-//var cont = document.getElementById('con');
-//cont.innerHTML=template;
+
     var result = document.getElementById('content');
     result.innerHTML = html;
 
@@ -57,8 +56,6 @@ jQuery(document).ready(function() {
     };
 
     this.addGoods = function (e) {
-       // alert('');
-       // var elm = jQuery(e.toElement);
         e.preventDefault();
         var name = jQuery(this).attr('name');
         //var price = elm.attr('price');
@@ -70,23 +67,17 @@ jQuery(document).ready(function() {
         //console.log(t.price);
         var str = "<tr id='line'>" + "<td>" + name + "</td>"  + "<td>" + "<input class='num' type='text'>" + "</td>"  + "<td id = 'val'>" + price + "</td>" + "<td>" + "<button class='del'>x</button>" + "</td>" + "</tr>";
         jQuery('.tab').show().append(jQuery(str));
-        //var count = jQuery('.num');
-        //if (count) {price = price*count;
         //    t.reculcPrice(+price)};
         t.reculcPrice(+price);
-
-        //this.addRecord();
         //console.log (this);
     };
     this.delGoods = function (e) {
         //var elm = jQuery(e.toElement);
         jQuery(this).parent().parent('tr').remove();
         e.preventDefault();
-        var price = parseInt(jQuery(this).parent().prev());
-
-        t.reculcPrice(-price);
-        //t.itog = t.itog - price;
-        console.log(price);
+        var delPrice = parseInt(document.getElementById('val').innerHTML);
+        t.reculcPrice(-delPrice);
+        //console.log(delPrice);
     };
     this.reculcPrice = function (value) {
 
@@ -101,10 +92,12 @@ jQuery(document).ready(function() {
     //console.log (this);
 
     this.changeAmount = function (e) {
-    var amount = parseInt(jQuery(e).attr('input'));
-        var val = parseInt(jQuery(this).next());
+        e.preventDefault();
+    var amount =  parseInt(document.getElementsByTagName('input').innerHTML);
 
-        console.log (val);
+        t.price = t.price*value;
+
+        console.log (amount);
         jQuery('basket').html(data);
     };
     //this.discount = function () {
@@ -134,9 +127,6 @@ jQuery(document).ready(function() {
     var bsk = new Basket('basket');
     bsk.init();
     console.log(bsk);
-
-
-
     });
 
 
